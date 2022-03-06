@@ -5,11 +5,6 @@ import { parse } from 'cache-control-esm'
 async function response (config, req, res) {
   const { request = {}, headers = {} } = res
 
-  // exclude binary response from cache
-  if (['arraybuffer', 'blob'].indexOf(request.responseType) > -1) {
-    return res
-  }
-
   let cacheControl = {}
 
   // Should we try to determine request cache expiration from headers or not
