@@ -3,7 +3,7 @@ import { write } from './cache'
 import { parse } from 'cache-control-esm'
 
 async function response (config, req, res) {
-  const { request = {}, headers = {} } = res
+  const { headers = {} } = res
 
   let cacheControl = {}
 
